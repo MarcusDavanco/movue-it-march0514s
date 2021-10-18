@@ -1,13 +1,13 @@
-export const splitValue = (value: number | string, padSize: number = 2) => `${value}`.padStart(padSize, '0').split('')
+export const splitValue = (value: number | string, padSize: number = 2) => `${value}`.padStart(padSize, '0').split('');
 
 export const scrollToElement = (selector: string) => {
-	const element: HTMLElement | null = document.querySelector(selector);
-	const mq = window.matchMedia('(max-width: 639px');
+	const card: HTMLElement | null = document.querySelector(selector);
+	const mq = window.matchMedia('(max-width: 639px)');
 
-	if(element && mq.matches){
-		element.scrollIntoView({ block: 'start', behavior: 'smooth'});
+	if (card && mq.matches) {
+		card.scrollIntoView({ block: 'start', behavior: 'smooth' });
 	}
-}
+};
 
 export const getRandomNumber = (min: number, max: number) => {
 	return Math.floor(Math.random() * (max - min) + min);
@@ -15,6 +15,4 @@ export const getRandomNumber = (min: number, max: number) => {
 
 export const playAudio = (path: string) => new Audio(path).play();
 
-export const sendNotification = (title: string, option: object) => new Notification(title, option);
-
-
+export const sendNotification = (title: string, options: object) => new Notification(title, options);
